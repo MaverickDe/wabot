@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 let config = {
     
     DATABASE_URL  :process.env.DATABASE_URL||"" ,
-    DATABASE_URL2  :process.env.DATABASE_URL||"" ,
+    DATABASE_URL2  :process.env.DATABASE_URL2||"" ,
     SQLHOST  :process.env.SQLHOST||"" ,
     SQLUSER: process.env.SQLUSER || "",
      REDIS_URL:process.env.REDIS_URL|| "",

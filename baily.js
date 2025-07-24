@@ -2,7 +2,8 @@ const { default: makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion,
 const qrcode = require('qrcode-terminal');
 
 
-require('dotenv/config');
+// require('dotenv/config');
+require('dotenv').config();
 const P =  require("pino");
 const { eq, sql,or } = require("drizzle-orm");
 
@@ -19,7 +20,7 @@ const logger = P({
           for (let msg_ of args) {
               let id = msg_?.msgAttrs?.participant_pn ||
                   msg_?.msgAttrs?.participant||
-                  msg_?.msgAttrs?.participant_lid
+                  msg_?.msgAttrs?.participant_lid ||msg_?.jid
                   || msg_?.participant 
               if (sock && id) {
                   await populatejidwithnums({sock,senderJid:id})

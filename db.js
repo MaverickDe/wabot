@@ -5,6 +5,7 @@ const mysql = require("mysql2/promise");
 const { Client,Pool } = require('pg');
 const { config } = require('./config');
 // import { Pool } from 'pg';
+console.log(config,"congg")
         const pgpool = new Pool({
             connectionString: config.DATABASE_URL2,
         });

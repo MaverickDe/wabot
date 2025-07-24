@@ -1,5 +1,5 @@
 const  OpenAI = require('openai');
-
+require('dotenv').config();
 const { db } = require("./db");
 const { redis } = require("./redis");
 const { groupContacts, groupMessages } = require("./postschema");
@@ -345,4 +345,6 @@ let populatejidwithnums = async ({ sock, isLid_, isjid_, senderJid, }) => {
            
   }
 }
-module.exports ={populatejidwithnums,extractMessageContent,sendMessageToJid,getGroupMember,extractChat,writeMessageToCSV,extractPhoneNumber2,extractPhoneNumber,isJid,isLid,extractMessageContent_,sendMessageToGroup,sendMessageToNumber,extractMessageContent,FILTER_GROUP_NAMES,getgroupchatmetadata,storegroupchatmetadata}
+
+module.exports = { populatejidwithnums, extractMessageContent, sendMessageToJid, getGroupMember, extractChat, writeMessageToCSV, extractPhoneNumber2, extractPhoneNumber, isJid, isLid, extractMessageContent_, sendMessageToGroup, sendMessageToNumber, extractMessageContent, FILTER_GROUP_NAMES, getgroupchatmetadata, storegroupchatmetadata }
+
